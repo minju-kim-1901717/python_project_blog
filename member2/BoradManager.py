@@ -18,12 +18,15 @@ class BoardManager:
             try:
                 with open(file_path, 'r', encoding='utf-8') as file:
                     for line in file:
-                        if line.startswith('제목:'):  # '제목:'으로 시작하는 줄을 찾아서 제목 추출
+                        
+                        if line.startswith("시간: "): # 시간:으로 시작하는 라인을 찾아옵니다.
+                            time = line.split(':', 1)[1].strip()
+                        elif line.startswith('제목:'):  # '제목:'으로 시작하는 줄을 찾아서 제목 추출
                             title = line.split(':', 1)[1].strip()# 콜론(:) 뒤의 문자열을 가져와 공백 제거
                         elif line.startswith('작성자:'):
                             Writer = line.split(':', 1)[1].strip()
                             print("=" * 60)
-                            print (f'{i+1}.제목:{title}\n  작성자:{Writer}')
+                            print (f'{i+1}.제목:{title}\n 시간:{time}\n 작성자:{Writer}')
                             posts.append((title, filename)) #search_content를 위한 리스트 매핑 위에 posts 리스트에 넣게 됩니다 <- 이것도 반복됩니다.
                             i += 1
                             break
@@ -59,7 +62,7 @@ class BoardManager:
         return posts #search_content에 posts 정보를 보냄
     
     def Latest_post(): # 글을 최신순으로 정렬하는 함수
-        print('⏰==게시글 최신순으로 정렬==⏰')
+        print('⏰ ==게시글 최신순으로 정렬== ⏰')
         posts_time_and_title = {} # 글안에 제목과 시간을 딕셔너리 형태로 가져옵니다.
         filename_map = {}  #search_content를 위한 리스트
         i = 0
@@ -196,7 +199,7 @@ def main():
         print("2.🏷️  카테고리별 검색")
         print("3.⏰ 최신순 정렬")
         print("4.👍 좋아요순 정렬")
-        print("5.🔎 작성자, id, 내용 검색")
+        print("5.🔎 작성자, 내용 검색")
         print("0. 종료")
         print("=" * 50)
         
