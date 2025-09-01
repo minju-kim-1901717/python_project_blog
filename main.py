@@ -1,4 +1,4 @@
-from mamber1 import main as student3
+from mamber1 import main as member3
 from member3.post import Post
 from member2.BoradManager import BoardManager, main as board_main
 from member3.comment import Comment
