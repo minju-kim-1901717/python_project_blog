@@ -1,6 +1,6 @@
-import student1
-import student2
-import student3
+import member1
+import member2
+import member3
 
 def main():
     while True:
@@ -16,9 +16,9 @@ def main():
             print("프로그램을 종료합니다.")
             break
         elif command == "1":
-            student1.create_post()
+            member1.create_post()
         elif command == "2":
-            student1.show_posts()
+            member1.show_posts()
         elif command == "3":
             manage_user()
         else:
@@ -37,19 +37,19 @@ def manage_user():
         if choice == "1":
             username = input("아이디 입력: ")
             password = input("비밀번호 입력: ")
-            student3.register_user(username, password)
+            member3.register_user(username, password)
         elif choice == "2":
             username = input("아이디 입력: ")
             password = input("비밀번호 입력: ")
-            student3.login_user(username, password)
+            member3.login_user(username, password)
         elif choice == "3":
-            student3.logout_user()
+            member3.logout_user()
         elif choice == "0":
             break
         else:
             print("⚠ 잘못된 선택입니다.")
 
 if __name__ == "__main__":
-    student3.load_data()
+    member3.load_data()
     main()
-    student3.save_data()
+    member3.save_data()
