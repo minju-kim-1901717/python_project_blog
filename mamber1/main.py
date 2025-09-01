@@ -79,3 +79,10 @@ def is_admin():
     if current_user and users[current_user]["is_admin"]:
         return True
     return False
+
+
+# 현재 로그인 사용자 반환
+def get_current_user():
+    return current_user  
+
+
