@@ -3,26 +3,53 @@ import student2
 import student3
 
 def main():
-    students = {
-        1: student1.student1,
-        2: student2.student2,
-        3: student3.student3
-    }
-
     while True:
-        try:
-            command = int(input("작동 코드를 실행해주세요 : (0:종료/1~3:수강생 호출) ").strip())
-        except ValueError:
-            print("⚠ 숫자만 입력해주세요.")
-            continue
-
-        if command == 0:
+        print("\n===== 메인 메뉴 =====")
+        print("1. 게시글 작성")
+        print("2. 게시글 목록 보기")
+        print("3. 회원 관리 (로그인/회원가입)")
+        print("0. 종료")
+        
+        command = input("👉 메뉴 선택: ").strip()
+        
+        if command == "0":
             print("프로그램을 종료합니다.")
             break
-        elif command in students:
-            students[command]()   # 해당 함수 실행
+        elif command == "1":
+            student1.create_post()
+        elif command == "2":
+            student1.show_posts()
+        elif command == "3":
+            manage_user()
         else:
-            print("⚠ 잘못된 명령어입니다. (1~3 입력 가능)")
+            print("⚠ 잘못된 명령어입니다.")
+
+def manage_user():
+    while True:
+        print("\n--- 회원 관리 ---")
+        print("1. 회원가입")
+        print("2. 로그인")
+        print("3. 로그아웃")
+        print("0. 메인으로 돌아가기")
+        
+        choice = input("👉 선택: ").strip()
+        
+        if choice == "1":
+            username = input("아이디 입력: ")
+            password = input("비밀번호 입력: ")
+            student3.register_user(username, password)
+        elif choice == "2":
+            username = input("아이디 입력: ")
+            password = input("비밀번호 입력: ")
+            student3.login_user(username, password)
+        elif choice == "3":
+            student3.logout_user()
+        elif choice == "0":
+            break
+        else:
+            print("⚠ 잘못된 선택입니다.")
 
 if __name__ == "__main__":
+    student3.load_data()
     main()
+    student3.save_data()
