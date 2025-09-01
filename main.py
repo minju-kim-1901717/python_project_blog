@@ -66,6 +66,6 @@ def manage_user():
             print("⚠ 잘못된 선택입니다.")
 
 if __name__ == "__main__":
-    student3.load_data()
+    member3.load_data()
     main()
-    student3.save_data()
+    member3.save_data()
