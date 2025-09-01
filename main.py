@@ -18,7 +18,7 @@ def main():
             break
         elif command == "1":
             # 현재 로그인한 사용자 정보 가져오기
-            current_user = getattr(student3, 'current_user', None)
+            current_user = getattr(member3, 'current_user', None)
             if current_user:
                 Post(current_user)
             else:
@@ -28,7 +28,7 @@ def main():
             board_main()
         elif command == "3":
             # 댓글 작성 기능
-            current_user = getattr(student3, 'current_user', None)
+            current_user = getattr(member3, 'current_user', None)
             if current_user:
                 comment = Comment(current_user)
                 comment.execute()
@@ -53,13 +53,13 @@ def manage_user():
         if choice == "1":
             username = input("아이디 입력: ")
             password = input("비밀번호 입력: ")
-            student3.register_user(username, password)
+            member3.register_user(username, password)
         elif choice == "2":
             username = input("아이디 입력: ")
             password = input("비밀번호 입력: ")
-            student3.login_user(username, password)
+            member3.login_user(username, password)
         elif choice == "3":
-            student3.logout_user()
+            member3.logout_user()
         elif choice == "0":
             break
         else:
