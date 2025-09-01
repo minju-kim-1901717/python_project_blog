@@ -22,10 +22,8 @@ class BoardManager:
                             title = line.split(':', 1)[1].strip()# 콜론(:) 뒤의 문자열을 가져와 공백 제거
                         elif line.startswith('작성자:'):
                             Writer = line.split(':', 1)[1].strip()
-                        elif line.startswith('게시글id:'):
-                            post_id = line.split(':', 1)[1].strip()
                             print("=" * 60)
-                            print (f'{i+1}.제목:{title}\n  작성자:{Writer}\n  게시글id:{post_id}')
+                            print (f'{i+1}.제목:{title}\n  작성자:{Writer}')
                             posts.append((title, filename)) #search_content를 위한 리스트 매핑 위에 posts 리스트에 넣게 됩니다 <- 이것도 반복됩니다.
                             i += 1
                             break
