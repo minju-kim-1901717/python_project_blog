@@ -116,3 +116,5 @@ Python Mini Blog는 파이썬 기본 기능만으로 구현한 콘솔 기반 미
 
 <img width="3024" height="2500" alt="게시물 작성 및 검생" src="https://github.com/user-attachments/assets/a934cb26-4f73-4291-84f0-c09660002da8" />
 
+<img width="1920" height="1200" alt="댓글" src="https://github.com/user-attachments/assets/20e9ab1d-1b00-4a83-b745-f58545a323c1" />
+
